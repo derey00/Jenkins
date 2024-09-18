@@ -9,7 +9,7 @@ pipeline
             {
                 script
                 {
-                    def fecha_nacimiento = '1981-05-26'
+                    def fecha_nacimiento = new Date("1981-05-26")
                     println ("fecha_nacimiento: "+fecha_nacimiento) 
                     println ("fecha: "+new Date()) 
                     def anyo_actual = new Date().getYear()
