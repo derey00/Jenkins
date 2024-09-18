@@ -1,3 +1,4 @@
+import java.util.Date
 pipeline
 {
     agent any
@@ -9,7 +10,7 @@ pipeline
             {
                 script
                 {
-                    def fecha_nacimiento = new Date("1981-05-26")
+                    def fecha_nacimiento =  new Date(1981, 7, 16)
                     println ("fecha_nacimiento: "+fecha_nacimiento) 
                     println ("fecha: "+new Date()) 
                     def anyo_actual = new Date().getYear()
