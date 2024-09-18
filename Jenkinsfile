@@ -10,18 +10,17 @@ pipeline
             {
                 script
                 {
-                    def fecha_nacimiento =  new Date(1981, 7, 16)
-                    println ("fecha_nacimiento: "+fecha_nacimiento) 
-                    println ("fecha: "+new Date()) 
+                    fecha_nacimiento = new Date(1981)
+                    
+                    
                     def anyo_actual = new Date().getYear()
                     
-                    println ("anyo_actual: "+anyo_actual) 
-                    def anyo_fecha_nacieminto = fecha_nacimiento.getYear()
-                    println ("anyo_fecha_nacieminto: "+anyo_fecha_nacieminto) 
-                    edad = anyo_actual - anyo_fecha_nacieminto
+                    anyo_fecha_nacimiento = new Date(1981).getYear()
                     
-                    println ("Edad: "+edad)                    
+                    edad = anyo_actual - anyo_fecha_nacimiento
+                    
                 }
+
             }
         }
         
@@ -31,8 +30,8 @@ pipeline
             {
                 script
                 {
-                    def contenidoFichero = "La edad es: "+edad
-                    writeFile(file: "C:\\Elena\\edad.txt", text:contenidoFichero)
+                    
+                    writeFile(file: "C:\\Elena\\edad.txt", text:"la edad es:"+edad)
                 }
             }
         }  
