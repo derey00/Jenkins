@@ -1,4 +1,4 @@
-import java.util.Date
+import java.text.SimpleDateFormat;
 pipeline
 {
     agent any
@@ -10,15 +10,20 @@ pipeline
             {
                 script
                 {
-                    fecha_nacimiento = new Date(1981)
+                    fecha_nacimiento = '01/01/1981'
+                    
+                    def fecha = new SimpleDateFormat("dd/MM/yyyy").parse(fecha_nacimiento)
+                    fechaNa = fecha.getYear().toInteger()
+                    println ("fechaNa: "+fechaNa)
                     
                     
-                    def anyo_actual = new Date().getYear()
+                    def anyo_actual = new Date().getYear().toInteger()
+                    println ("anyo_actual: "+anyo_actual) 
                     
-                    anyo_fecha_nacimiento = new Date(1981).getYear()
                     
-                    edad = anyo_actual - anyo_fecha_nacimiento
                     
+                    edad = anyo_actual - fechaNa
+                    println ("edad: "+edad) 
                 }
 
             }
